@@ -12,7 +12,7 @@ export function Login() {
 const schema = yup
   .object({
     email: yup.string().email().required(),
-    passowd: yup.string().positive().min(6).required(),
+    password: yup.string().min(6).required(),
   })
   .required();
 
@@ -38,15 +38,15 @@ const schema = yup
                  <Form onSubmit={handleSubmit(onSubmit)}>
                     <InputContainer>
                        <label htmlFor="email">Email</label>
-                       <input {...register("email")}  type="email" id="email" />
+                       <input {...register("email")}/>
                     </InputContainer>
 
                     <InputContainer>
                         <label htmlFor="senha">Senha</label>
-                        <input  {...register("password")} type="password" id="senha" />
+                        <input  {...register("password")}  />
                     </InputContainer>
                     <br></br>
-                    <Button type="submit" theme="primary">Entrar</Button>
+                    <Button type="submit">Entrar</Button>
                  </Form>
                  <br></br>
                  <p>
