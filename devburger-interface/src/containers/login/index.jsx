@@ -36,16 +36,18 @@ export function Login() {
 
   console.log(errors);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (FormData) => {
     try {
-      const { status } = await api.post('/sessions', {
-        email: data.email,
-        password: data.password,
+      const { data: { token }, status } = await api.post('/sessions', {
+        email: FormData.email,
+        password: FormData.password,
       },
         {
           validateStatus: () => true,
-        },
+        }
       );
+
+      
 
       if (status === 200 || status === 201) {
         setTimeout(() => {
@@ -57,7 +59,8 @@ export function Login() {
       } else {
         throw new Error();
       }
-      console.log(status);
+
+      localStorage.setItem('token', token);
 
     // eslint-disable-next-line no-unused-vars
     } catch (error) {
