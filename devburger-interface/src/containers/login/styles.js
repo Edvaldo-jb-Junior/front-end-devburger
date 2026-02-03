@@ -28,7 +28,6 @@ export const LeftContainer = styled.div`
     `;
 export const RightContainer = styled.div`
     background: url('${Background}');
-    background-size: cover;
     background-position: center;
     background-color: #1e1e1e;
 

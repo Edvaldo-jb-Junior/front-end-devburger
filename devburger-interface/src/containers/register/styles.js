@@ -23,6 +23,7 @@ export const LeftContainer = styled.div`
 
     img {
         width: 80%;
+        height: 40%;
     }
 
     `;

@@ -16,6 +16,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hook-form": "^7.66.0",
+    "react-multi-carousel": "^2.8.6",
     "react-router-dom": "^7.9.6",
     "react-toastify": "^11.0.5",
     "styled-components": "^6.1.19",
@@ -26,6 +27,7 @@
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
+    "baseline-browser-mapping": "^2.9.19",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import-helpers": "^2.0.1",
@@ -35,5 +37,8 @@
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
     "vite": "^7.1.7"
+  },
+  "resolutions": {
+    "baseline-browser-mapping": "^1.0.0"
   }
 }
