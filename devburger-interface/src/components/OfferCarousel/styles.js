@@ -13,11 +13,11 @@ export const Container = styled.div`
 export const Title = styled.h2`
     font-size: 40px;
     font-weight: 800;
-    color: #9758a6;
+    color: #61a120;
     padding-bottom: 12px;
     text-align: center;
     position: relative;
-    margin-bottom: 20px;
+    margin: 40px 0;
     margin-top: 20px;
 
     &::after {
@@ -26,7 +26,7 @@ export const Title = styled.h2`
         bottom: 0;
         width: 56px;
         height: 4px;
-        background-color: #9758a6;
+        background-color: #61a120;
         left: calc(50% - 28px);
 
     }
@@ -40,7 +40,7 @@ export const ContainerItems = styled.div`
 
     display: flex;
     align-items: center;
-    padding: 20px 10px;
+    padding: 10px 10px;
     width: 94%;
     height: 200px;
     border-radius: 20px;
