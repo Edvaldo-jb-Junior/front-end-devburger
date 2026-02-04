@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
 
-import { Title, Container, ContainerItems } from "./styles";
+import { Container, Title } from "./styles";
+import { CardProduct } from "../CardProduct";
 
 
 
@@ -50,12 +51,11 @@ export function OfferCarousel() {
             <Carousel 
                 responsive={responsive} 
                 infinite={true}
-                partialVisible={false} >
+                partialVisible={false} 
+                itemClass="carousel-item">
+                
                     {offers.map( product => (
-                        <ContainerItems key={product.id} 
-                        imageUrl = {product.url}>
-                           <p>{product.name}</p> 
-                        </ContainerItems>
+                        <CardProduct key={product.id} product={product} />
                     ))}
             
             </Carousel>

@@ -21,13 +21,9 @@ export const Banner = styled.div`
 
 export const Container = styled.section`
     background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
     ),
     url('${Background}');
     height: 580px;
-`
-
-export const Content = styled.div`
-
-`
+`;

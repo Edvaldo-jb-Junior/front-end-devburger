@@ -46,6 +46,7 @@ export const ContainerItems = styled.div`
     border-radius: 20px;
     margin: 0 10px;
     gap: 10px;
+    cursor: grab;
 
     p{
         color: #ffffff;
