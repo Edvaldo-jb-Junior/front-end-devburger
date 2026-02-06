@@ -6,6 +6,14 @@ export const Container = styled.div`
     .carousel-item {
         padding-left: 40px;
     }
+
+      .react-multiple-carousel__arrow--right{
+        top: 2px;
+    }
+
+    .react-multiple-carousel__arrow--left{
+        top: 2px;
+    }
         
     padding-left: -20px;
 `;

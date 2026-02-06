@@ -6,6 +6,15 @@ export const Container = styled.div`
     .carousel-item {
         padding-right: 40px;
     }
+
+    .react-multiple-carousel__arrow--right{
+        top: 2px;
+    }
+
+    .react-multiple-carousel__arrow--left{
+        top: 2px;
+    }
+
     overflow-x: hidden;
     padding-left: -20px;
     .react-multi-carousel-list{
