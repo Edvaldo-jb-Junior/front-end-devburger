@@ -25,5 +25,5 @@ export const Container = styled.section`
         rgba(255, 255, 255, 0.2)
     ),
     url('${Background}');
-    height: 580px;
+    height: 680px;
 `;

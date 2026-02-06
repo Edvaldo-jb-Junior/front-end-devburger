@@ -6,7 +6,7 @@ export const Container = styled.div`
     .carousel-item {
         padding-left: 40px;
     }
-
+        
     padding-left: -20px;
 `;
 
