@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
     border-radius: 8px;
     background-color: #ffffff;
@@ -15,18 +15,19 @@ export const Container = styled.div`
 
     div{
         width: 100%;
-        height: 80px;
+        height: 90px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
     p{
-        font-size: 18px;
+        font-size: 16px;
         color: #ff8c05;
-        line-height: 70px;
+        line-height: 16px;
         font-weight: 700;
-        margin-bottom: 8px;
+        margin-bottom: 14px;
+        margin-top: 28px;
     }
 
     strong{
@@ -40,6 +41,6 @@ export const Container = styled.div`
 export const CardImage = styled.img`
     height: 100px;
     position: absolute;
-    top: -50px;
+    top: -60px;
 
     `
