@@ -3,17 +3,32 @@ import { Container, Banner, CategoryMenu, ProductsContainer, CategoryButton } fr
 import { api } from "../../services/api";
 import { formatPrice } from "../../utils/formatPrice";
 import { CardProduct } from "../../components/CardProduct";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Button } from "../../components/Button";
 
 
 export function Menu(){
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
-    const [activeCategory, setActiveCategory] = useState(0);
+    
 
     const navigate = useNavigate();
-    
+
+    const { search } = useLocation();
+
+    const queryParans = new URLSearchParams(search);
+
+
+    const [activeCategory, setActiveCategory] = useState(() => {
+         const categoryId = +queryParans.get('categoria');
+
+         if(categoryId){
+            return categoryId;
+         }
+          return 0;
+    });
+        
         useEffect(() => {
             async function loadCategories() {
                 const { data } = await api.get("/categories");
@@ -84,8 +99,14 @@ export function Menu(){
             </CategoryMenu>
             <ProductsContainer>
                 {filteredProducts.map( product => (
-                    <CardProduct product={product} key={product} />
+                    <CardProduct product={product} key={product.id} />
                 ))}
+                <div></div>
+                <Button onClick={() => 
+                    navigate({
+                        pathname: '/',
+                            })
+                } >Voltar</Button>
             </ProductsContainer>
         </Container>
     );

@@ -14,6 +14,7 @@ export const Container = styleds.div`
             rgba(255, 255, 255, 0.2)
         ),
         url('${Background}');
+
 `;
 
 export const Banner = styleds.div`
@@ -74,4 +75,5 @@ export const ProductsContainer= styleds.div`
     max-width: 1280px;
     gap: 60px;
     margin: 50px auto;
+
 `;
