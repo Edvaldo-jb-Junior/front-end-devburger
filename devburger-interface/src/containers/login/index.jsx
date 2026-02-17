@@ -9,11 +9,13 @@ import { Container } from "./styles";
 import Logo from "../../assets/Logo.svg";
 import { Title, LeftContainer, RightContainer, Form, InputContainer, Link } from "./styles";
 import { Button } from "../../components/Button";
+import { useUser } from "../../hooks/useUser";
 
 
 
 export function Login() {
   const navigate = useNavigate();
+  const { putUserData } = useUser();
 
   const schema = yup
     .object({
@@ -38,7 +40,7 @@ export function Login() {
 
   const onSubmit = async (FormData) => {
     try {
-      const { data: { token }, status } = await api.post('/sessions', {
+      const { data: userData } = await api.post('/sessions', {
         email: FormData.email,
         password: FormData.password,
       },
@@ -58,9 +60,11 @@ export function Login() {
         toast.error('Email ou senha inválidos!');
       } else {
         throw new Error();
-      }
+      };
 
-      localStorage.setItem('token', token);
+      putUserData(userData);
+
+      //localStorage.setItem('token', token);
 
     // eslint-disable-next-line no-unused-vars
     } catch (error) {
