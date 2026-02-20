@@ -3,12 +3,19 @@ import { Login } from "../containers/login";
 import { Register } from "../containers/register";
 import { Home } from "../containers/home";
 import { Menu } from "../containers/menu";
+import { Header } from "../components/Header";
 
 
 export const router = createBrowserRouter([
      {
         path: "/",
-        element: <Home />
+        element: (
+             <>
+            <Header/>
+            <Home />
+        </>
+        ),
+       
     },
     {
         path: "/login",

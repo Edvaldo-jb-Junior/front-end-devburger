@@ -2,7 +2,7 @@
 import { OfferCarousel } from "../../components/OfferCarousel";
 import { CategoriesCarousel } from "../../components/CategoriesCarousel";
 import { Banner, Container}  from "./styles";
-import { useUser } from "../../hooks/userContext";
+import { useUser } from "../../hooks/UserContext";
 
 
 export function Home(){

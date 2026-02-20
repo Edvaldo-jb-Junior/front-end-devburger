@@ -9,7 +9,7 @@ import { Container } from "./styles";
 import Logo from "../../assets/Logo.svg";
 import { Title, LeftContainer, RightContainer, Form, InputContainer, Link } from "./styles";
 import { Button } from "../../components/Button";
-import { useUser } from "../../hooks/useUser";
+import { useUser } from "../../hooks/UserContext";
 
 
 
@@ -34,43 +34,44 @@ export function Login() {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+
   });
 
   console.log(errors);
 
-  const onSubmit = async (FormData) => {
-    try {
-      const { data: userData } = await api.post('/sessions', {
-        email: FormData.email,
-        password: FormData.password,
+  const onSubmit = async (formData) => {
+  try {
+    const { data: userData, status } = await api.post(
+      '/sessions',
+      {
+        email: formData.email,
+        password: formData.password,
       },
-        {
-          validateStatus: () => true,
-        }
-      );
+      {
+        validateStatus: () => true,
+      }
+    );
 
-      
-
-      if (status === 200 || status === 201) {
-        setTimeout(() => {
-          navigate('/');
-        }, 1500);
-        toast.success('Login realizado com sucesso!');
-      } else if (status === 400) {
-        toast.error('Email ou senha inválidos!');
-      } else {
-        throw new Error();
-      };
-
+    if (status === 200 || status === 201) {
       putUserData(userData);
 
-      //localStorage.setItem('token', token);
+      toast.success('Login realizado com sucesso!');
 
-    // eslint-disable-next-line no-unused-vars
-    } catch (error) {
-      toast.error('Não foi possível fazer login. Tente novamente mais tarde.');
+      setTimeout(() => {
+        navigate('/');
+      }, 1500);
+
+    } else if (status === 400) {
+      toast.error('Email ou senha inválidos!');
+    } else {
+      throw new Error();
     }
-  };
+
+
+  } catch {
+    toast.error('Não foi possível fazer login. Tente novamente mais tarde.');
+  }
+};
 
   return (
     <Container>

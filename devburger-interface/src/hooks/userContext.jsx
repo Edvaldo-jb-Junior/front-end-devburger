@@ -1,18 +1,45 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
-export const UserContext = createContext({});
+
+const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState();
 
   const putUserData = (userInfo) => {
     setUserInfo(userInfo);
-    localStorage.setItem("devburger:user", JSON.stringify(userInfo));
+    localStorage.setItem("devburger:userData", JSON.stringify(userInfo));
   };
 
+  const logout = () => {
+
+    localStorage.removeItem("devburger:userData");
+    setUserInfo({});
+
+  };
+
+  useEffect(() => {
+    const userInfoLocalStorage = localStorage.getItem("devburger:userData");
+
+    if (userInfoLocalStorage) {
+      setUserInfo(JSON.parse(userInfoLocalStorage));
+    }
+  }, []);
+
   return (
-    <UserContext.Provider value={{ userInfo, putUserData }}>
+    <UserContext.Provider value={{ userInfo, putUserData, logout}}>
       {children}
     </UserContext.Provider>
   );
 };
+
+ export const useUser = () => {
+  const context = useContext(UserContext);
+
+  if (!context) {
+    throw new Error("useUser must be used within UserProvider");
+  }
+
+  return context;
+};
+
