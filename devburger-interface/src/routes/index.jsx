@@ -5,6 +5,7 @@ import { Home } from "../containers/home";
 import { Menu } from "../containers/menu";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Cart } from "../containers/Cart";
 
 
 export const router = createBrowserRouter([
@@ -37,6 +38,11 @@ export const router = createBrowserRouter([
         </>
         ),
     },
+     {
+        path: "/carrinho",
+        element: <Cart />
+    },
+
     
     
 ]);
