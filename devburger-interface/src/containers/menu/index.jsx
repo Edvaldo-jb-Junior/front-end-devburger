@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Container, Banner, CategoryMenu, ProductsContainer, CategoryButton } from "./styles";
+import { 
+    Container, 
+    Banner, 
+    CategoryMenu, 
+    ProductsContainer, 
+    CategoryButton 
+} from "./styles";
 import { api } from "../../services/api";
 import { formatPrice } from "../../utils/formatPrice";
 import { CardProduct } from "../../components/CardProduct";
@@ -21,7 +27,7 @@ export function Menu(){
 
 
     const [activeCategory, setActiveCategory] = useState(() => {
-         const categoryId = +queryParans.get('categoria');
+         const categoryId = +queryParans.get('category');
 
          if(categoryId){
             return categoryId;

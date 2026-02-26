@@ -32,13 +32,19 @@ export const Navigate= styled.nav`
         gap: 20px;
         color: #fff; 
         cursor: pointer;
+
+        hr{
+            height: 24px;
+            border: 1px solid #9758a6;
+        }
         
     }
 `;
 
 export const HeaderLink = styled(Link)`
    text-decoration: none;
-   color: #ffffff;
+   color: ${props => props.$isActive ? '#9758a6' : '#fff'};
+   border-bottom: ${props => props.$isActive ? '2px solid #9758a6' : 'none'};
    font-size: 14px;
    transition: color 0.2s ease;
 
