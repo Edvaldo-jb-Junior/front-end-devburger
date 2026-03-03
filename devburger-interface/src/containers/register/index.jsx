@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { Container } from "./styles";
 import Logo from "../../assets/Logo.svg";
 import { Title, LeftContainer, RightContainer, Form, InputContainer, Link } from "./styles";
-import { Button } from "../../components/Button";
+import { Button } from "../../components";
 
 
 

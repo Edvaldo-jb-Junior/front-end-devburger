@@ -8,9 +8,9 @@ import {
 } from "./styles";
 import { api } from "../../services/api";
 import { formatPrice } from "../../utils/formatPrice";
-import { CardProduct } from "../../components/CardProduct";
+import { CardProduct, Button } from "../../components";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button } from "../../components/Button";
+
 
 
 export function Menu(){

@@ -3,7 +3,7 @@ import Texture from "../../assets/background-cart.svg";
 import Background from "../../assets/background-login.svg";
 
 export const Container = styled.footer`
-    width: 100%;
+    width: 100vw;
      background: linear-gradient(
         rgba(255, 255, 255, 0.2),
         rgba(255, 255, 255, 0.2)
