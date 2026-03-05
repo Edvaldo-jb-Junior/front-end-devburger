@@ -3,13 +3,12 @@ import Texture from "../../assets/background-cart.svg";
 import Background from "../../assets/background-login.svg";
 
 export const Container = styled.footer`
-    width: 100vw;
+    width: 100%;
      background: linear-gradient(
         rgba(255, 255, 255, 0.2),
         rgba(255, 255, 255, 0.2)
     ), url('${Background}');
     min-height: 100vh;
-    
     `;
 
 export const Banner = styled.div`
@@ -25,6 +24,7 @@ export const Banner = styled.div`
 
     img{
         height: 140px;
+       
     }
 `;
 
@@ -49,8 +49,8 @@ export const Title = styled.h1`
 
 export const Content = styled.div`
     display: grid;
-    grid-template-columns: 1fr 20%;
-    max-width: 1200px;
+    grid-template-columns: 1fr 28%;
+    max-width: 1800px;
     padding: 40px;
     margin: 0 auto;
     gap: 24px;
