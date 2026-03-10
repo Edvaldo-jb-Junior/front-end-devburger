@@ -9,7 +9,6 @@ import trashIcon from '../../assets/trash.svg';
 
 export function CartItems() {
     const { cartProducts, increaseProduct, decreaseProduct, deleteProduct } = useCart();
-        console.log(cartProducts);
 
     return(
         <Table.Root>

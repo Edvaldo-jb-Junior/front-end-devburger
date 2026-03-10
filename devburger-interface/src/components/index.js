@@ -8,3 +8,4 @@ export * from './Header';
 export * from './Table';
 export * from './CartItems';
 export * from './CartResume';
+export * from './Stripe/CheckoutForm';
