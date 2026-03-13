@@ -61,7 +61,7 @@ export const Title = styled.h2`
   text-align: center;
  
   span {
-    color: #9758a6;
+    color: ${(props) => props.theme.purple};
     font-family: "Road Rage", sans-serif;
   }
 
@@ -98,7 +98,7 @@ export const InputContainer = styled.div`
     }
 
     p {
-        color: #cf3057;
+        color: ${(props) => props.theme.darkRed};
         font-size: 14px;
         line-height: 80%;
         font-weight: 600;

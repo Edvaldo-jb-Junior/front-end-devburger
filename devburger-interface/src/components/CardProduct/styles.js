@@ -23,7 +23,7 @@ export const Container = styled.div`
 
     p{
         font-size: 16px;
-        color: #ff8c05;
+        color: ${(props) => props.theme.orange};
         line-height: 16px;
         font-weight: 700;
         margin-bottom: 14px;
@@ -32,7 +32,7 @@ export const Container = styled.div`
 
     strong{
         font-size: 22px;
-        color: #363636;
+        color: ${(props) => props.theme.black};
         font-weight: 800;
         line-height: 4px;
     }

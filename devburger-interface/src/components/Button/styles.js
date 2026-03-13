@@ -7,12 +7,12 @@ export const ContainerButton = Styled.button`
     height: 52px;
     border-radius: 5px;
     color: #ffffff;
-    background-color: #9758a6;
+    background-color: ${(props) => props.theme.purple};
     font-family: "Road Rage", sans-serif;
     font-size: 30px;
 
     &:hover {
-        background-color: #6f357c;
+        background-color: ${(props) => props.theme.secondDarkPurple};
         border: 1px dashed #fff
     }
 

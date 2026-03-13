@@ -15,7 +15,7 @@ export function CartResume() {
 
     const navigate = useNavigate();
 
-    const{ cartProducts, clearCart } = useCart();
+    const{ cartProducts} = useCart();
 
     useEffect(() => {
         const sumAllItems = cartProducts.reduce((acc, current) => {
@@ -53,29 +53,6 @@ export function CartResume() {
 
         }
 
-        //try {
-          //   const { status } = await api.post('/orders', {products}, {
-          //      validateStatus: () => true,
-          //    });
-       
-          //   if (status === 201 || status === 200) {
-          //      setTimeout(() => {
-          //      navigate('/');
-              // }, 2000);
-
-           //    clearCart(); 
-               
-            //   toast.success('Pedido Realizado com sucesso!');
-           //  } else if (status === 400) {
-          //     toast.error('Pedido não Realizado, tente novamente');
-           //  } else {
-           //    throw new Error();
-           //  }
-          //   console.log(status);
-       
-          // } catch {
-           //  toast.error("Falha no sistema tente novamente");
-         //  }
     };
 
     return (
@@ -94,6 +71,7 @@ export function CartResume() {
             </div>
         </Container>
         <Button onClick={submitOrder}>Finalizar Pedido</Button>
+        
         </Wrapper>
     )
 };

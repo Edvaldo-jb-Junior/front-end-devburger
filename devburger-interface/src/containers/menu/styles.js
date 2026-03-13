@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const Container = styleds.div`
     width: 100%;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: ${(props) => props.theme.secondWhite};
 
      background: linear-gradient(
             rgba(255, 255, 255, 0.2),
@@ -26,7 +26,7 @@ export const Banner = styleds.div`
     background: url('${BannerHamburguer}');
     background-size: cover;
     background-position: center;
-    background-color: #1f1f1f;
+    background-color: ${(props) => props.theme.mainBlack};
     width: 100%;
     height: 300px;
 
@@ -34,14 +34,14 @@ export const Banner = styleds.div`
         font-family: "Road Rage", sans-serif;
         font-size: 80px;
         line-height: 65px;
-        color: #f4f4f4;
+        color: ${(props) => props.theme.darkWhite};
         position: absolute;
 
         right: 20%;
         
         span{
             display: block;
-            color: #f4f4f4;
+            color: ${(props) => props.theme.darkWhite};
             font-size: 24px;}
         }
 `;
@@ -58,7 +58,7 @@ export const CategoryButton = styleds(Link)`
     text-decoration: none;
     cursor: pointer;
     background: nome;
-    color: #9758a6;
+    color: ${(props) => props.theme.purple};
     font-size: 24px;
     font-weight: 500;
     padding-bottom: 5px;

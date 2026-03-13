@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Header, Footer } from "../components";
-import { Cart, Checkout, CompletePayment, Home, Login, Menu, Register } from "../containers";
+import { Cart, Checkout, Home, Login, Menu, Register, CompletePayment } from "../containers";
 
 
 export const router = createBrowserRouter([
@@ -9,41 +9,47 @@ export const router = createBrowserRouter([
         element: (
              <>
             <Header/>
-            <Home />
-            <Footer />
+            <Home/>
+            <Footer/>
         </>
         ),
     },
     {
         path: "/login",
-        element: <Login />
+        element: <Login/>
     },
     {
         path: "/cadastro",
-        element: <Register />
+        element: <Register/>
     },
 
     {
         path: "/cardapio",
         element: (
              <>
-            <Header/>
-            <Menu />
-        </>
+                <Header/>
+                <Menu/>
+            </>
         ),
     },
      {
         path: "/carrinho",
-        element: <Cart />
+        element: 
+            <>
+                <Header/>
+                <Cart/>
+            </>
     },
 
  {
         path: "/checkout",
-        element: <Checkout />
+        element:
+            <Checkout/>
+       
     },
      {
         path: "/complete",
-        element: <CompletePayment />
+        element: <CompletePayment/>
     },
 
     

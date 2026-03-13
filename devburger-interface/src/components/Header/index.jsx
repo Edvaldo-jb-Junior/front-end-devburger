@@ -28,7 +28,7 @@ console.log(userInfo);
             </Navigate>
             <Options>
                 <Profile>
-                    <UserCircleIcon size={24} color="#fff" />
+                    <UserCircleIcon size={24} color="${(props) => props.theme.white}" />
                     <div>
                         <p>
                             Olá, <span>{ userInfo?.name }</span>
@@ -37,7 +37,7 @@ console.log(userInfo);
                     </div>
                 </Profile>
                 <LinkContainer>
-                    <ShoppingCartIcon size={24} color="#fff" />
+                    <ShoppingCartIcon size={24} color="${(props) => props.theme.white}" />
                     <HeaderLink to="/carrinho">Carrinho</HeaderLink>
                 </LinkContainer>
             </Options>

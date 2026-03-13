@@ -13,7 +13,7 @@ export const Container = styled.div`
   
 
     *{
-        color: #484848;
+        color: ${(props) => props.theme.secondBlack};
         font-weight: 500;
     }
 
@@ -31,7 +31,7 @@ export const Container = styled.div`
             font-weight: 700;
             font-size: 20px;
             margin-bottom: 20px;
-            background-color: #484848;
+            background-color: ${(props) => props.theme.secondBlack};
             color: #ffffff;
             padding: 8px 12px;
             text-align: center;
@@ -62,6 +62,6 @@ export const Container = styled.div`
         padding: 20px;
 
         *{
-            color: #484848;}
+            color: ${(props) => props.theme.secondBlack};}
     }
 `;

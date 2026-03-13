@@ -5,8 +5,8 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #111111;
-    color: #fff;
+    background-color: ${(props) => props.theme.mainBlack};
+    color: ${(props) => props.theme.white};
     padding: 0 40px;
 `;
 
@@ -30,12 +30,12 @@ export const Navigate= styled.nav`
         display: flex;
         align-items: center;
         gap: 20px;
-        color: #fff; 
+        color: ${(props) => props.theme.white}; 
         cursor: pointer;
 
         hr{
             height: 24px;
-            border: 1px solid #9758a6;
+            border: 1px solid ${(props) => props.theme.purple};
         }
         
     }
@@ -43,13 +43,15 @@ export const Navigate= styled.nav`
 
 export const HeaderLink = styled(Link)`
    text-decoration: none;
-   color: ${props => props.$isActive ? '#9758a6' : '#fff'};
-   border-bottom: ${props => props.$isActive ? '2px solid #9758a6' : 'none'};
+   color: ${props => props.$isActive 
+   ? (props) => props.theme.purple 
+   : (props) => props.theme.white};
+   border-bottom: ${props => props.$isActive ? `2px solid ${(props) => props.theme.purple}` : 'none'};
    font-size: 14px;
    transition: color 0.2s ease;
 
    &:hover {
-    color: #9758a6;
+    color: ${(props) => props.theme.white};
    }
 `;
 
@@ -67,12 +69,12 @@ export const Profile = styled.div`
     font-size: 14px;
 
     p{
-        color: #ffffff;
+        color: ${(props) => props.theme.secondWhite};
         line-height: 90%;
         font-weight: 600;
 
         span{
-            color: #9758a6;
+            color: ${(props) => props.theme.purple};
             font-weight: 700;
         }
 
@@ -80,7 +82,7 @@ export const Profile = styled.div`
 `;
 
 export const Logout = styled.button`
-    color: #ff3205;
+    color: ${(props) => props.theme.red};
     background: none;
     border: none;
     font-size: 16px;
