@@ -6,7 +6,7 @@ export const ContainerButton = Styled.button`
     border: none;
     height: 52px;
     border-radius: 5px;
-    color: #ffffff;
+    color: ${(props) => props.theme.white};;
     background-color: ${(props) => props.theme.purple};
     font-family: "Road Rage", sans-serif;
     font-size: 30px;

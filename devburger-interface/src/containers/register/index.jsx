@@ -106,7 +106,7 @@ export function Register() {
             <p>{errors?.confirmPassword?.message}</p>
           </InputContainer>
           <br></br>
-          <Button type="submit" theme="primary">Cadastrar</Button>
+          <Button type="submit" >Cadastrar</Button>
         </Form>
         <br></br>
         <p>

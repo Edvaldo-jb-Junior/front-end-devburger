@@ -1,57 +1,31 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Header, Footer } from "../components";
-import { Cart, Checkout, Home, Login, Menu, Register, CompletePayment } from "../containers";
+import {  Routes, Route } from "react-router-dom";
+
+import { Cart, Checkout, Home, Login, Menu, Register, CompletePayment, Admin} from "../containers";
+import { UserLayout } from "../layouts/UserLayout";
+import { AdminLayout } from "../layouts/AdminLayout";
 
 
-export const router = createBrowserRouter([
-     {
-        path: "/",
-        element: (
-             <>
-            <Header/>
-            <Home/>
-            <Footer/>
-        </>
-        ),
-    },
-    {
-        path: "/login",
-        element: <Login/>
-    },
-    {
-        path: "/cadastro",
-        element: <Register/>
-    },
 
-    {
-        path: "/cardapio",
-        element: (
-             <>
-                <Header/>
-                <Menu/>
-            </>
-        ),
-    },
-     {
-        path: "/carrinho",
-        element: 
-            <>
-                <Header/>
-                <Cart/>
-            </>
-    },
+export function Router(){
+    return(
+        <Routes>
+            <Route path="/" element={<UserLayout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/cardapio" element={<Menu />} />
+                <Route path="/carrinho" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout/>} />
+                <Route path="/complete" element={<CompletePayment/>} />
+            </Route>
 
- {
-        path: "/checkout",
-        element:
-            <Checkout/>
-       
-    },
-     {
-        path: "/complete",
-        element: <CompletePayment/>
-    },
+            <Route path="/admin" element={<AdminLayout/>}>
+                <Route path="/admin/home" element={<Admin />}/>
+            </Route>
 
-    
-    
-]);
+           <Route path="/Login" element={<Login />} />
+
+           <Route path="/cadastro" element={<Register />} />
+
+        </Routes>
+    )
+}
+

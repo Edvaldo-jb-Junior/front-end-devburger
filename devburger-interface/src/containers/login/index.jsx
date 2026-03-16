@@ -58,7 +58,12 @@ export function Login() {
       toast.success('Login realizado com sucesso!');
 
       setTimeout(() => {
-        navigate('/');
+
+        if(userData?.admin){
+          navigate('/admin/home');
+        } else {
+          navigate('/');
+        } 
       }, 1500);
 
     } else if (status === 400) {
@@ -96,7 +101,7 @@ export function Login() {
             <p>{errors?.passowd?.message}</p>
           </InputContainer>
           <br></br>
-          <Button type="submit" theme="primary">Entrar</Button>
+          <Button type="submit" >Entrar</Button>
         </Form>
         <br></br>
         <p>

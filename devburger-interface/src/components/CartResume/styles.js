@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-    background-color: #ffffff;
+    background-color: ${(props) => props.theme.white};;
     border-radius: 12px;
     margin-bottom: 20px;
     display: flex;
@@ -32,7 +32,7 @@ export const Container = styled.div`
             font-size: 20px;
             margin-bottom: 20px;
             background-color: ${(props) => props.theme.secondBlack};
-            color: #ffffff;
+            color: ${(props) => props.theme.white};
             padding: 8px 12px;
             text-align: center;
             border-top-left-radius: 20px;
